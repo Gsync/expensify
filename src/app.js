@@ -11,10 +11,11 @@ import 'normalize.css/normalize.css';
 
 const store = configureStore();
 
-const expenseOne = store.dispatch(addExpense({ description: 'Water bill', amount: 100, createdAt: -21000 }));
-const expenseTwo = store.dispatch(addExpense({ description: 'Gas bill', amount: 200, createdAt: -1000 }));
+store.dispatch(addExpense({ description: 'Water bill', amount: 1000, createdAt: -21000 }));
+store.dispatch(addExpense({ description: 'Gas bill', amount: 200, createdAt: 1100 }));
+store.dispatch(addExpense({ description: 'Rent', amount: 100, createdAt: 1000 }));
 
-store.dispatch(setTextFilter('water'));
+// store.dispatch(setTextFilter('water'));
 
 const state = store.getState();
 const visibleExpenses = getVisibleExpenses(state.expenses, state.filters);
