@@ -38,14 +38,14 @@
     "uuid": "^3.1.0",
     "validator": "^9.2.0",
     "webpack": "^3.10.0",
-    "webpack-dev-server": "^2.5.1"
-  },
-  "devDependencies": {
+    "webpack-dev-server": "^2.5.1",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "css-loader": "^0.28.4",
     "node-sass": "^4.5.3",
     "normalize.css": "^7.0.0",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2"
+  },
+  "devDependencies": {
   }
 }
