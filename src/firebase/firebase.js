@@ -28,11 +28,23 @@ const config = {
 //     console.log('This failed: ', error);
 //   });
 
-database.ref('Completed')
-    .remove()
-    .then(function () {
-        console.log("Remove succeeded.")
-    })
-    .catch(function (error) {
-        console.log("Remove failed: " + error.message)
+// database.ref('expenses').push({
+//     description: "Rent",
+//     note: "",
+//     amount: 109500,
+//     createdAt: 965877777
+// });
+
+database.ref('expenses')
+  .once('value')
+  .then((snapshot) => {
+    const expenses = [];
+    snapshot.forEach(element => {
+        expenses.push({
+            id: element.key,
+            ...element.val()
+        });
     });
+    console.log(expenses);
+  });
+
