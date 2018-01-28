@@ -14,6 +14,8 @@ const config = {
 
   const database = firebase.database();
 
+  export { firebase, database as default };
+
 //   database.ref().set({
 //     name: "Test Name",
 //     age: 43,
@@ -35,16 +37,16 @@ const config = {
 //     createdAt: 965877777
 // });
 
-database.ref('expenses')
-  .once('value')
-  .then((snapshot) => {
-    const expenses = [];
-    snapshot.forEach(element => {
-        expenses.push({
-            id: element.key,
-            ...element.val()
-        });
-    });
-    console.log(expenses);
-  });
+// database.ref('expenses')
+//   .once('value')
+//   .then((snapshot) => {
+//     const expenses = [];
+//     snapshot.forEach(element => {
+//         expenses.push({
+//             id: element.key,
+//             ...element.val()
+//         });
+//     });
+//     console.log(expenses);
+//   });
 
