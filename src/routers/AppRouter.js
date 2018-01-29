@@ -1,5 +1,7 @@
 import React from "react";
-import { BrowserRouter, Route, Switch, Link, NavLink } from "react-router-dom";
+import { Router, Route, Switch, Link, NavLink } from "react-router-dom";
+//to redirect after login
+import createHistory from 'history/createBrowserHistory';
 import ExpenseDashboardPage from '../components/Dashboard';
 import Login from '../components/Login';
 import AddExpensePage from '../components/AddExpense';
@@ -8,8 +10,10 @@ import HelpPage from '../components/Help';
 import NotFoundPage from '../components/NotFound';
 import Header from '../components/Header';
 
+export const history = createHistory();
+
 const AppRouter = () => (
-  <BrowserRouter>
+  <Router history={history}>
     <div>
       <Header />
       <Switch>
@@ -21,7 +25,7 @@ const AppRouter = () => (
         <Route component={NotFoundPage} />
       </Switch>
     </div>
-  </BrowserRouter>
+  </Router>
 );
 
 export default AppRouter;
