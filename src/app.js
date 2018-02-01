@@ -10,6 +10,7 @@ import "./styles/styles.scss";
 import 'normalize.css/normalize.css';
 import 'react-dates/lib/css/_datepicker.css';
 import { firebase } from './firebase/firebase';
+import LoadingPage from './components/LoadingPage';
 
 const store = configureStore();
 
@@ -28,7 +29,7 @@ const renderApp = () => {
     }
 }
 
-ReactDOM.render(<p>Loading...</p>, document.getElementById("app"));
+ReactDOM.render(<LoadingPage />, document.getElementById("app"));
 
 //Method to check the login state, whether the user is logged in or not
 firebase.auth().onAuthStateChanged((user) => {
